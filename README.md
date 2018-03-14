@@ -1,15 +1,7 @@
 ## Plan
 
-- [Quick start](#quick-start)
-- [Status](#status)
-- [What's included](#whats-included)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Community](#community)
-- [Versioning](#versioning)
-- [Creators](#creators)
-- [Copyright and license](#copyright-and-license)
+Make a one stop tool to get into work mode.
+An autostarted pomodoro time, workmode muzic thta starts while in workmode and a overview of done's to keep motivated.
 
 ## Uses code
 
