@@ -1,0 +1,85 @@
+/* Styling of the pomodoro timer */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+* {
+  // border: 1px solid black;
+  box-sizing: border-box;
+}
+body {
+  background: #eee;
+  font-family: "Roboto Slab", serif;
+}
+#content {
+  width: 500px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+h1,
+h3 {
+  text-align: center;
+}
+.panel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 100px;
+  button {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: blue;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    color: white;
+    &#reset {
+      background: red;
+    }
+    &:active {
+      color: initial;
+      transform: translate(1px, 1px);
+    }
+  }
+}
+.clock {
+  margin: auto;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  font-size: 36px;
+  cursor: pointer;
+}
+#canvas {
+  height: 250px;
+  width: 250px;
+  position: relative;
+}
+.current-session {
+  margin-top: -200px;
+}
+.time {
+  margin-top: 30px;
+}
+.settings > div {
+  display: inline-block;
+  margin: auto -2px;
+  width: 50%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font: inherit;
+    &:active {
+      color: initial;
+    }
+  }
+}
