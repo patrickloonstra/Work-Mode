@@ -8,65 +8,72 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" tyle="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
-    <title>Hello, world!</title>
+    <title>Work Mode</title>
 
 </head>
   <body>
-    <h1>Work Mode</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <h2>Pomodoro</h2>
-
-          <div id="content">
-            <h1>Pomodoro Clock</h1>
-            <div class="panel">
-              <button id="start">Start</button>
-              <button id="stop">Stop</button>
-              <button id="reset">Reset</button>
-            </div>
-            <div class="clock">
-              <canvas class="crawler" id="canvas"></canvas>
-              <div class="current-session">Session</div>
-              <div class="time">25</div>
-            </div>
-            <div class="settings">
-              <div class="break-length">
-                <h3>Break Length</h3>
-                <button value="-">-</button>
-                <span id="brnum">5</span>
-                <button value="+">+</button>
-              </div>
-              <div class="session-length">
-                <h3>Session Length</h3>
-                <button value="-">-</button>
-                <span id="snum">25</span>
-                <button value="+">+</button>
-              </div>
-            </div>
-            </div>
-        </div>
-        <div class="col-sm">
-          <h2>Video</h2>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0QLmIL7ffcQ?rel=0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-sm">
-
-          <h2>/done</h2>
-            <iframe src="https://www.nos.nl/" height="200" width="100%"></iframe>
-        </div>
-      </div>
+    <div class="title">
+      <h1>Work Mode</h1>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="js/pomodoro.js"></script>
-    <script>https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js</script>
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col-4">
+          <div class="card" id="cardPomodoro">
+            <h2>Pomodoro</h2>
+            <div id="counter">
+              <script src="js/radialIndicator.js"></script>
+              <script src="js/angular.redadialIndicator.js"></script>
+                <script type="text/jscript">
+                var radialObj = radialIndicator('#counter', {
+                    radius: 60,
+                    barWidth: 5,
+                    barColor: '#FF0000',
+                    minValue: 0,
+                    maxValue: 60,
+                    fontWeight: 'normal',
+                    roundCorner: true,
+                    format: function (value) {
+                        var date = new Date();
+                        return date.getHours() + ':' + date.getMinutes();
+                    }
+                  });
+
+                  setInterval(function () {
+                    radialObj.value(new Date().getSeconds() + 1);
+                  }, 1000);
+                </script>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-4">
+          <div class="card" id="cardDone">
+              <h2>Done</h2>
+              Done stuff
+            </div>
+        </div>
+
+
+        <!-- <div class="w-100"></div> -->
+
+
+        <div class="col-4">
+          <div class="card" id="cardVideo">
+            <h2>Music</h2>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/353411825&color=%231e3966&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+
+            <!-- <iframe src="http://uk7.internet-radio.com:8172/stream"> -->
+            <!-- <audio width="300" height="32" src="http://stream.intenseradio.net:8000/live" controls="controls">This player do not work on this browser </audio> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>
