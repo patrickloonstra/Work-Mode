@@ -7,8 +7,33 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" tyle="text/css" href="style.css">
+    <link rel="stylesheet" tyle="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+    <!-- css switcher based on time -->
+    <script>
+      function getStylesheet() {
+            var currentTime = new Date().getHours();
+            if (0 <= currentTime&&currentTime < 5) {
+             document.write("<link rel='stylesheet' href='css/night.css' type='text/css'>");
+            }
+            if (5 <= currentTime&&currentTime < 11) {
+             document.write("<link rel='stylesheet' href='css/morning.css' type='text/css'>");
+            }
+            if (11 <= currentTime&&currentTime < 16) {
+             document.write("<link rel='stylesheet' href='css/day.css' type='text/css'>");
+            }
+            if (16 <= currentTime&&currentTime < 22) {
+             document.write("<link rel='stylesheet' href='css/evening.css' type='text/css'>");
+            }
+            if (22 <= currentTime&&currentTime <= 24) {
+             document.write("<link rel='stylesheet' href='css/night.css' type='text/css'>");
+            }
+      }
+      getStylesheet();
+    </script>
+
+
 
     <title>Work Mode</title>
 
