@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" tyle="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script type="text/javascript" src="js/.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" tyle="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
-    <!-- css switcher based on time -->
-    <!-- <script>
+
+
+  <!-- css switcher based on time -->
+  <!-- <script>
       function getStylesheet() {
             var currentTime = new Date().getHours();
             if (0 <= currentTime&&currentTime < 5) {
@@ -37,91 +38,112 @@
  -->
 
 
-    <title>🍅 Work Mode</title>
+  <title>🍅 Work Mode</title>
 
 </head>
-  <body>
-    <div class="title">
-      <h1>🍅 Work Mode</h1>
-    </div>
 
-    <div class="container">
-      <div class="row">
+<body>
+  <div class="title">
+    <h1>🍅 Work Mode</h1>
+  </div>
 
-
-        <div class="col-4">
-          <div class="card" id="cardPomodoro">
-            <h2>🍅 Pomodoro</h2>
-            <div id="counter">
-
-<!-- Pomodoro timer -->
-
-<!-- Display the countdown timer in an element -->
-              <p id="demo"></p>
-
-              <script>
-
-for (i = 0; i < 5; i++) {
-              // Set the date we're counting down to
-              var countDownDate = new Date().getTime();
-
-              // Update the count down every 1 second
-              var x = setInterval(function() {
-
-                // Get todays date and time
-                var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
-                var distance = countDownDate - now;
-
-                // Set pomodoro of 25 minutes, 300000 ms
-                var distance = countDownDate - now + (10000);
+  <div class="container">
+    <div class="row">
 
 
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      <div class="col-4">
+        <div class="card" id="cardPomodoro">
+          <h2>🍅 Pomodoro</h2>
+          <div id="counter">
 
-                // Display the result in the element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
+            <!-- Pomodoro timer -->
 
-                // If the count down is finished, write some text
-                if (distance < 0) {
-                  clearInterval(x);
-                  document.getElementById("demo").innerHTML = "EXPIRED";
+            <p id="demo"></p>
+            <script>
+              // This function start timer A
+              function startTimerA() {
+                for (i = 0; i < 1; i++) {
+                  // Set the date we're counting down to
+                  var countDownDate = new Date().getTime();
+
+                  // Update the count down every 1 second
+                  var x = setInterval(function() {
+
+                    // Get todays date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now an the count down date
+                    var distance = countDownDate - now;
+
+                    // Set pomodoro of 25 minutes, 300000 ms
+                    var distance = countDownDate - now + (10000);
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="demo"
+                    document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+                      minutes + "m " + seconds + "s ";
+
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                      clearInterval(x);
+                      document.getElementById("demo").innerHTML = "Timer ended";
+                      // Start timer B
+                      startTimerB();
+                    }
+                  }, 1000);
                 }
-              }, 1000);
-}
-              </script>
+              }
 
-            </div>
+              // This function starts timer B
+              function startTimerB() {
+                document.getElementById("demo").innerHTML = "Timer B started!";
+                var a = setInterval(function() {
+                  clearInterval(a);
+
+                  // Start timer A
+                  startTimerA();
+                }, 1000);
+              }
+
+              // Start timer A
+              startTimerA();
+            </script>
+
           </div>
         </div>
-
-
-        <div class="col-4">
-          <div class="card" id="cardDone">
-              <h2>✅ Done</h2>
-              Done stuff
-            </div>
-        </div>
-
-        <!-- <div class="w-100"></div> -->
-
-        <div class="col-4">
-          <div class="card" id="cardVideo">
-            <h2>🎧 Music</h2>
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/353411825&color=%231e3966&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
-
-            <!-- <iframe src="http://uk7.internet-radio.com:8172/stream"> -->
-            <!-- <audio width="300" height="32" src="http://stream.intenseradio.net:8000/live" controls="controls">This player do not work on this browser </audio> -->
-          </div>
-        </div>
-
       </div>
+
+
+      <div class="col-4">
+        <div class="card" id="cardDone">
+          <h2>✅ Done</h2> Done stuff
+        </div>
+      </div>
+
+      <!-- <div class="w-100"></div> -->
+
+      <div class="col-4">
+        <div class="card" id="cardVideo">
+          <h2>🎧 Music</h2>
+          <!-- <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/353411825&color=%231e3966&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe> -->
+
+          <!-- <iframe src="http://uk7.internet-radio.com:8172/stream"> -->
+          <!-- <audio width="300" height="32" src="http://stream.intenseradio.net:8000/live" controls="controls">This player do not work on this browser </audio> -->
+        </div>
+      </div>
+
+      <div class="madeby">
+        <img src="assets/img/patrick.png">
+        <p>Made by <a href src="https://www.patrickloonstra.nl">Patrick Loonstra</a>
+      </div>
+
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
