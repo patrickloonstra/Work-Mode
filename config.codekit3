@@ -7,7 +7,7 @@
 		"uuidString": "AE30A383-3170-478F-AFC6-EA445A8BBD6D"
 		}
 	],
-"creatorBuild": "26680",
+"creatorBuild": "26330",
 "files": {
 	"\/.gitattributes": {
 		"cB": 0,
@@ -4950,8 +4950,7 @@
 	"creationDate": 543829775,
 	"displayValue": "Work-Mode",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "\/assets\/img\/favicons\/apple-touch-icon.png",
-	"iconImageWasSetByUser": 0
+	"iconImageName": "meme-cocaine"
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -6754,7 +6753,6 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
