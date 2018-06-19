@@ -7,7 +7,7 @@ h1, h2 {
 h2 {
   font-size: 24px;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 /* Layout */
@@ -58,7 +58,7 @@ body {
 
 
 /* Label in the bottom right corner */
-
+/*
 .madeby {
   background-color: #ffffff;
   right: 0;
@@ -84,4 +84,37 @@ body {
 .madeby a {
   color: white;
   text-decoration: underline;
+} */
+
+
+.levelsio-by {
+  font-family:"Helvetica Neue",sans-serif;
+  right:0;
+  bottom:0;
+  position:fixed;
+  z-index:100;
+  border-top-left-radius: 5px;
+  padding: 6px;
+  border-top:1px solid #efefef;
+  border-left:1px solid #efefef;
+  background:#fff;
+  color:#6f6f6f;
+  text-decoration:none;
+}
+.levelsio-by:hover {
+  background:#fff;
+  color:rgb(255, 71, 66); /* change to your main brand color */
+}
+.levelsio-by img {
+  border-radius:100%;
+  width:22px;
+  vertical-align:middle;
+}
+.levelsio-by p {
+  margin:0;
+  vertical-align:middle;
+  display:inline;
+  margin-left:7px;
+  font-weight:500;
+  font-size:14px;
 }
